@@ -2,11 +2,14 @@ import React from "react";
 import "../../assets/css/register.css"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../action/action";
 
 
 const Register = () => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [formError, setFormError] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
@@ -30,7 +33,7 @@ const Register = () => {
         setFormError(() => (validate(credentials)))
         setIsSubmit(true)
         if (Object.keys(formError).length === 0 && isSubmit) {
-            // dispatch(registerUser(credentials))
+            dispatch(registerUser(credentials))
             setSuccess(true)
         }
     }

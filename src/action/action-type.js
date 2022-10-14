@@ -1,0 +1,9 @@
+export const REGISTER_USER = "REGISTER_USER";
+export const LOGIN_USER = "LOGIN_USER";
+export const ISADMIN = "ISADMIN";
+
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const GET_PRODUCT = "GET_PRODUCT";
+export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS"
+export const UPDATE_PRODUCT = "UPDATE_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
