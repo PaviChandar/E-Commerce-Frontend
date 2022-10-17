@@ -10,6 +10,8 @@ import AdminHome from "../components/admin/AdminHome";
 import Login from "../components/home/Login";
 import Register from "../components/home/Register";
 import ValidateSession from "../components/shared/ValidateSession";
+import NewProduct from "../components/admin/NewProduct";
+import UpdateProduct from "../components/admin/UpdateProduct";
 
 const Router = () => {
 
@@ -40,6 +42,8 @@ const Router = () => {
                 <Route path='/vivo' element={<Vivo />} />
 
                 <Route path='/admin' element={<AdminHome />} />
+                <Route path='/admin/create/product' element={<NewProduct />} />
+                <Route path='/admin/update/:id' element={<UpdateProduct />} />
             </Routes>
         </>
     )

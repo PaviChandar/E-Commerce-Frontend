@@ -1,0 +1,10 @@
+@import '~antd/dist/antd.css';
+
+.action{
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

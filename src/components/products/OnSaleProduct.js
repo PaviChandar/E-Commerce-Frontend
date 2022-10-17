@@ -12,7 +12,7 @@ const OnSaleProduct = () => {
                 "https://m.media-amazon.com/images/I/81QVLzeVckL._AC_UY218_.jpg",
                 "https://m.media-amazon.com/images/I/61ahn9N38zL._AC_UY218_.jpg",
                 "https://m.media-amazon.com/images/I/616FcX9aiEL._AC_UY218_.jpg",
-                "https://m.media-amazon.com/images/I/71Yxd73ba9L._AC_UY218_.jpg"
+                "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQNaPubRLPTSY7zQjehoLr3vM1vgRam1xRWRwybsMRAg9gehIVpcCkwbrOMn2eaWUieUgOhii3MiXyZjJY838pSnVXjIt1heMymDs6f0O5kBwtYCy55eRenxw&usqp=CAE"
             ]
     const length = photos.length
 

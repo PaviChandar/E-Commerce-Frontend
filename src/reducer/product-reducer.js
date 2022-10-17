@@ -16,7 +16,7 @@ const productReducer = (state = initialState, action) => {
         case types.UPDATE_PRODUCT:
             return{
                 ...state,
-                hotel: action.payload,
+                product: action.payload,
                 loading: false
             }
         case types.DELETE_PRODUCT:
@@ -24,10 +24,16 @@ const productReducer = (state = initialState, action) => {
                 ...state,
                 loading:true
             }
-        case types.GET_PRODUCT:
+        case types.GET_SINGLE_PRODUCT:
             return{
                 ...state,
-                hotel: action.payload,
+                product: action.payload,
+                loading: false
+            }
+        case types.GET_PRODUCT_BY_CATEGORY:
+            return {
+                ...state,
+                product: action.payload,
                 loading: false
             }
         default:

@@ -1,0 +1,23 @@
+.latestImage{
+display: flex;
+flex-wrap: wrap;
+column-gap: 50px;
+row-gap: 50px;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.category>span{
+    width: 300px;
+    font-size: 16px;
+}

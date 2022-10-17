@@ -95,27 +95,27 @@ const Register = () => {
                     <div className="registerItems">
                         <div className="registerItem">
                             <label> Username:</label>
-                            <input type="text" name="username" value={credentials.username} onChange={(e) => handleChange(e)} className="regInput" />
+                            <input type="text" name="username" value={credentials.username} onChange={(e) => handleChange(e)}  />
                             <span className="error">{formError.username}</span>
                         </div>
                         <div className="registerItem">
                             <label>Email:</label>
-                            <input type="text" name="email" value={credentials.email} onChange={(e) => handleChange(e)} className="regInput" />
+                            <input type="text" name="email" value={credentials.email} onChange={(e) => handleChange(e)} />
                             <span className="error">{formError.email}</span>
                         </div>
                         <div className="registerItem">
                             <label>Password:</label>
-                            <input type="password" name="password" value={credentials.password} onChange={(e) => handleChange(e)} className="regInput" />
+                            <input type="password" name="password" value={credentials.password} onChange={(e) => handleChange(e)}  />
                             <span className="error">{formError.password}</span>
                         </div>
                         <div className="registerItem">
                             <label>Confirm Password:</label>
-                            <input type="password" name="confirmPassword" value={credentials.confirmPassword} onChange={(e) => handleChange(e)} className="regInput" />
+                            <input type="password" name="confirmPassword" value={credentials.confirmPassword} onChange={(e) => handleChange(e)} />
                             <span className="error">{formError.confirmPassword}</span>
                         </div>
                         <div className="registerItem">
                             <label>Contact:</label>
-                            <input type="number" name="phone" value={credentials.phone} onChange={(e) => handleChange(e)} className="regInput" min={0} />
+                            <input type="number" name="phone" value={credentials.phone} onChange={(e) => handleChange(e)}  min={0} />
                             <span className="error">{formError.phone}</span>
                         </div>
                     </div>

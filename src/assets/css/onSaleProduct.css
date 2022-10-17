@@ -1,13 +1,13 @@
 .slider{
     position: relative;
-    height: 80vh;
+    height: 45vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .image{
-    width: 900px;
+    width: 700px;
     height: 300px;
     border-radius: 10px;
 }

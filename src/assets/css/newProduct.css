@@ -1,0 +1,57 @@
+.product{
+    align-items: center;
+    gap: 20px;
+}
+
+h1{
+    top: 50%;
+}
+
+.productContainer{
+    /* top: 50%; */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 210px;
+    text-align: center;
+    margin-left: 800px;
+}
+
+input[type="text"] {
+    padding: 10px 15px;
+    width: 200px;
+}
+
+input[type="number"] {
+    padding: 10px 15px;
+    width: 200px;
+    text-align: center;
+}
+
+select{
+    padding: 10px 15px;
+    width: 200px;
+}
+
+.newproductButton {
+    background-color:black;
+    color: white;
+    padding:8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.backButton{
+    background-color: black;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}

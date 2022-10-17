@@ -3,6 +3,7 @@ import "../../assets/css/home.css"
 import { useNavigate } from "react-router-dom";
 import GoToList from "../products/GoToList";
 import OnSaleProduct from "../products/OnSaleProduct";
+import LatestProduct from "../products/LatestProduct";
 
 const Home = () => {
     const navigate = useNavigate()
@@ -16,7 +17,6 @@ const Home = () => {
 
     const handleLogout = (e) => {
         e.preventDefault()
-        console.log("in logout")
         sessionStorage.removeItem('token')
         sessionStorage.removeItem('role')
         setIsLoggedIn(false)
@@ -34,7 +34,10 @@ const Home = () => {
                 </>
             }
             <div>
+                <h1>On Sale Product</h1>
                 <OnSaleProduct />
+                <h1>Latest Products</h1>
+                <LatestProduct />
                 <GoToList />
             </div>
         </div>
