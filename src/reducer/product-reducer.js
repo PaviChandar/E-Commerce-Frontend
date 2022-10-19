@@ -33,7 +33,7 @@ const productReducer = (state = initialState, action) => {
         case types.GET_PRODUCT_BY_CATEGORY:
             return {
                 ...state,
-                product: action.payload,
+                products: action.payload,
                 loading: false
             }
         default:

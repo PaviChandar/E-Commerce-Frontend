@@ -5,6 +5,11 @@
 
 h1{
     top: 50%;
+    font-size: 30px;
+    background-color: bisque;
+    width: 500px;
+    margin-left: 670px;
+    margin-top: 10px;
 }
 
 .productContainer{

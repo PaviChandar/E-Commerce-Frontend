@@ -1,7 +1,6 @@
 import axios from "axios";
 import * as types from './action-type'
 import { baseUrl } from "../components/shared/Constant";
-import { type } from "@testing-library/user-event/dist/type";
 
 const userRegistered = () => ({
     type: types.REGISTER_USER
@@ -44,6 +43,23 @@ const upgradeProduct = () => ({
 const getProductCategory = (productCategory) => ({
     type: types.GET_PRODUCT_BY_CATEGORY,
     payload: productCategory
+})
+
+const addToCart = () => ({
+    type: types.ADD_TO_CART,
+})
+
+const updateQuantity = () => ({
+    type: types.UPDATE_QUANTITY
+})
+
+const removeCart = () => ({
+    type: types.REMOVE_PRODUCT_FROM_CART
+})
+
+const userCart = (cart) => ({
+    type: types.USER_CART,
+    payload: cart
 })
 
 //Register User
@@ -134,15 +150,15 @@ export const getAllProducts = (allProducts) => {
 export const getProductByCategory = (categoryType) => {
     return function (dispatch) {
         axios
-        .get(`${baseUrl}/product/categoryType?category=${categoryType}`)
-        .then((res) => {
-            dispatch(getProductCategory(res.data))
-            console.log("ressponse : ", res.data)
-            console.log("category type: ", categoryType)
-        })
-        .catch((err) => {
-            console.log("error : ", err)
-        })
+            .get(`${baseUrl}/product/categoryType?category=${categoryType}`)
+            .then((res) => {
+                dispatch(getProductCategory(res.data))
+                console.log("ressponse : ", res.data)
+                console.log("category type: ", categoryType)
+            })
+            .catch((err) => {
+                console.log("error : ", err)
+            })
     }
 }
 
@@ -157,6 +173,61 @@ export const deleteProduct = (id) => {
                 console.log("error : ", err)
             })
 
+    }
+}
+
+export const addProductsToCart = (product, userId, quantity = 1) => {
+    return function (dispatch) {
+        axios
+            .post(`${baseUrl}/cart`, { productId: product._id, userId: userId, quantity: quantity })
+            .then((res) => {
+                console.log("response data cart : ", res.data)
+                dispatch(addToCart())
+            })
+            .catch((err) => {
+                console.log("error : ", err)
+            })
+    }
+}
+
+export const updateCartQuantity = (productId, userId) => {
+    return function (dispatch) {
+        axios
+            .put(`${baseUrl}/cart/${productId._id}/${userId}`)
+            .then((res) => {
+                console.log("update quantity : ", res)
+                dispatch(updateQuantity())
+            })
+            .catch((err) => {
+                console.log("error : ", err)
+            })
+    }
+}
+
+export const removeProductFromCart = (id) => {
+    return function (dispatch) {
+        axios
+            .delete(`${baseUrl}/cart/${id}`)
+            .then((res) => {
+                dispatch(removeCart())
+            })
+            .catch((err) => {
+                console.log("error : ", err)
+            })
+    }
+}
+
+export const getMyCart = (id) => {
+    return function (dispatch) {
+        axios
+            .get(`${baseUrl}/cart/${id}`)
+            .then(res => {
+                console.log("res : ", res)
+                dispatch(userCart(res.data))
+            })
+            .catch(err => {
+                console.log("error : ", err)
+            })
     }
 }
 

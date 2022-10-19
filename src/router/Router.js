@@ -1,10 +1,5 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Samsung from "../components/brand/Samsung";
-import OnePlus from "../components/brand/OnePlus";
-import Oppo from "../components/brand/Oppo";
-import Redmi from "../components/brand/Redmi";
-import Vivo from "../components/brand/Vivo";
 import Home from "../components/home/Home";
 import AdminHome from "../components/admin/AdminHome";
 import Login from "../components/home/Login";
@@ -12,6 +7,9 @@ import Register from "../components/home/Register";
 import ValidateSession from "../components/shared/ValidateSession";
 import NewProduct from "../components/admin/NewProduct";
 import UpdateProduct from "../components/admin/UpdateProduct";
+import ViewProduct from "../components/brand/ViewProduct";
+import ProductList from "../components/brand/ProductList";
+import Cart from "../components/cart/Cart";
 
 const Router = () => {
 
@@ -25,7 +23,7 @@ const Router = () => {
             navigate('/admin')
         } else if (sessionStorage.getItem('role') === 'false' && url.indexOf('/admin')) {
             navigate('/')
-        } 
+        }
     }, [])
 
 
@@ -35,11 +33,9 @@ const Router = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/' element={<Home />} />
-                <Route path='/samsung' element={<Samsung />} />
-                <Route path='/oppo' element={<Oppo />} />
-                <Route path='/oneplus' element={<OnePlus />} />
-                <Route path='/redmi' element={<Redmi />} />
-                <Route path='/vivo' element={<Vivo />} />
+                <Route path='/product-list' element={<ProductList />} />
+                <Route path='/view-product/:id' element={<ViewProduct />} />
+                <Route path="/cart" element={<Cart />} />
 
                 <Route path='/admin' element={<AdminHome />} />
                 <Route path='/admin/create/product' element={<NewProduct />} />

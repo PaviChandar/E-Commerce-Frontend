@@ -12,45 +12,40 @@ const GoToList = () => {
     const [vivo, setVivo] = useState("vivo")
     const [oppo, setOppo] = useState("oppo")
     const [redmi, setRedmi] = useState("redmi")
-    let { id } = useParams()
-
-    // useEffect(() => {
-    //     dispatch(getSingleProduct(id))
-    // })
 
     const handleOneplus = (e) => {
         e.preventDefault()
         dispatch(getProductByCategory(oneplus))
-        navigate('/oneplus')
+        navigate('/product-list')
     }
 
     const handleSamsung = (e) => {
         e.preventDefault()
         dispatch(getProductByCategory(samsung))
-        navigate('/samsung')
+        navigate('/product-list')
     }
 
     const handleOppo = (e) => {
         e.preventDefault()
         dispatch(getProductByCategory(oppo))
-        navigate('/oppo')
+        navigate('/product-list')
     }
 
     const handleRedmi = (e) => {
         e.preventDefault()
         dispatch(getProductByCategory(redmi))
-        navigate('/redmi')
+        navigate('/product-list')
     }
 
     const handleVivo = (e) => {
         e.preventDefault()
         dispatch(getProductByCategory(vivo))
-        navigate('/vivo')
+        navigate('/product-list')
     }
 
     return (
         <div>
-            <h1>Shop by Brand</h1>
+            <h2>Shop by Brand</h2>
             <div className="brand">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHiBH1hXIAdEkaQDI2a5YcvjdchnbmNHRTJQ&usqp=CAU" className="samsung" onClick={(e) => handleSamsung(e)} alt="img" />
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtYXBJ1byIObo1u9zd930RAvHQNXjf4qX3bA&usqp=CAU" className="oppo" onClick={(e) => handleOppo(e)} alt="img" />
