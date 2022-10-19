@@ -62,7 +62,7 @@ const userCart = (cart) => ({
     payload: cart
 })
 
-//Register User
+
 export const registerUser = (user) => {
     return function (dispatch) {
         axios
@@ -71,13 +71,12 @@ export const registerUser = (user) => {
                 dispatch(userRegistered)
                 alert('User registered successfully')
             })
-            .catch(err => {
-                console.log(err)
+            .catch((err) => {
+                console.log("error : ",err)
             })
     }
 }
 
-//Login user
 export const loginUser = (user) => {
     return function (dispatch) {
         axios
@@ -99,7 +98,6 @@ export const registerProduct = (product) => {
         axios
             .post(`${baseUrl}/product/`, product)
             .then((res) => {
-                console.log("response : ", res.data)
                 dispatch(addProduct())
             })
             .catch((err) => {
@@ -153,8 +151,6 @@ export const getProductByCategory = (categoryType) => {
             .get(`${baseUrl}/product/categoryType?category=${categoryType}`)
             .then((res) => {
                 dispatch(getProductCategory(res.data))
-                console.log("ressponse : ", res.data)
-                console.log("category type: ", categoryType)
             })
             .catch((err) => {
                 console.log("error : ", err)
@@ -181,7 +177,6 @@ export const addProductsToCart = (product, userId, quantity = 1) => {
         axios
             .post(`${baseUrl}/cart`, { productId: product._id, userId: userId, quantity: quantity })
             .then((res) => {
-                console.log("response data cart : ", res.data)
                 dispatch(addToCart())
             })
             .catch((err) => {
@@ -195,7 +190,6 @@ export const updateCartQuantity = (productId, userId) => {
         axios
             .put(`${baseUrl}/cart/${productId._id}/${userId}`)
             .then((res) => {
-                console.log("update quantity : ", res)
                 dispatch(updateQuantity())
             })
             .catch((err) => {
@@ -222,7 +216,6 @@ export const getMyCart = (id) => {
         axios
             .get(`${baseUrl}/cart/${id}`)
             .then(res => {
-                console.log("res : ", res)
                 dispatch(userCart(res.data))
             })
             .catch(err => {

@@ -32,7 +32,6 @@ const UpdateProduct = () => {
 
     useEffect(() => {
         if (product) {
-            console.log("product : ", product)
             setCredentials({ ...product })
         }
     }, [product])
