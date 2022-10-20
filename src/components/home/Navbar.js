@@ -6,16 +6,6 @@ const Navbar = () => {
     const navigate = useNavigate()
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const { cart } = useSelector((state) => (state.cart))
-    console.log("Cart details : ", cart)
-    // console.log("Cart quantity :", cart[0].quantity)
-
-    // const getTotalQuantity = (qua) => {
-    //     var totalQuantity = 0
-        
-    //     qua.forEach(ele => {
-    //         totalQuantity += ele.quantity
-    //     })
-    //         } 
 
     useEffect(() => {
         if (sessionStorage.getItem('token')) {
@@ -36,10 +26,7 @@ const Navbar = () => {
             {isLoggedIn ?
                 <>
                     <button className="logout" onClick={(e) => handleLogout(e)}>Logout</button>
-                    <button className="cart" onClick={() => navigate('/cart')}>Cart 
-                    ({cart.length} items) 
-                   {/* { getTotalQuantity(cart)} */}
-                    in cart</button>
+                    <button className="cart" onClick={() => navigate('/cart')}>Cart ({cart.length} items) in cart</button>
                 </> :
                 <>
                     <button className="login">Login</button>
