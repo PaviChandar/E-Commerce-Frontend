@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/home.css"
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
 import GoToList from "../products/GoToList";
 import OnSaleProduct from "../products/OnSaleProduct";
 import LatestProduct from "../products/LatestProduct";

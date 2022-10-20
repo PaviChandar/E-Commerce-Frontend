@@ -97,7 +97,7 @@ const AvailableProducts = () => {
 
     return (
         <div>
-           <h1>Available Mobiles</h1>
+           <h2>Available Mobiles</h2>
            {
             <Table columns={column} dataSource={productSource} />
            }

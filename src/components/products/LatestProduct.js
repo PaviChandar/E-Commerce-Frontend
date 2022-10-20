@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
+import { getSingleProduct } from "../../action/action";
 import "../../assets/css/latestProduct.css"
 
 const LatestProduct = () => {

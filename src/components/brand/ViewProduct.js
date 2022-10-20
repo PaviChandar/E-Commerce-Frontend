@@ -24,12 +24,13 @@ const ViewProduct = () => {
 
     const handleCart = () => {
         dispatch(addProductsToCart(product, token.id, quantity))
+        alert("Product added to cart")
     }
 
     return (
         <>
             <Navbar />
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card">
                 <div className='viewContainer'>
                     {product.image && product.image.map(image => {
                         return (
@@ -37,15 +38,13 @@ const ViewProduct = () => {
                         )
                     })}
                 </div>
-                <div className="card-body">
-                    <h5 className="card-title">Name : {product.name}<br />
-                        Model : {product.model}</h5>
-                    <p className="card-text">{product.description} </p>
-                    <h3>{product.price}</h3>
-                    <input className='card-text mb-2' value={quantity} min={0} type="number" onChange={(e) => setQuantity(e.target.value)} ></input>
-                    <button href="#" className="btn btn-primary" onClick={(handleCart)} >
-                        Add to cart
-                    </button>
+                <div className="viewProductContainer">
+                    <h5 className="viewTitle"><b>Name : </b>{product.name}<br />
+                        <b> Model :</b> {product.model}</h5>
+                    <p className="viewText">{product.description} </p>
+                    <h3 className="viewPrice">Rs. {product.price}</h3>
+                    <input className="viewQuantity" value={quantity} min={0} type="number" onChange={(e) => setQuantity(e.target.value)} />
+                    <button href="#" className="btn" style = {{marginLeft: "30px"}} onClick={(handleCart)} >Add to cart </button>
                 </div>
             </div>
         </>

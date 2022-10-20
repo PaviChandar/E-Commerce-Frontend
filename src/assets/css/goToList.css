@@ -1,6 +1,7 @@
 .brand {
     display: flex;
     gap: 20px;
+    margin-left: 500px;
 }
 
 .samsung,

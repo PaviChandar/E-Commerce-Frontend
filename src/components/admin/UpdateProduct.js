@@ -14,7 +14,8 @@ const UpdateProduct = () => {
         name: '',
         model: '',
         description: '',
-        price: ''
+        price: '',
+        img: ''
     })
 
     let { id } = useParams()
@@ -40,7 +41,7 @@ const UpdateProduct = () => {
         e.preventDefault()
         setFormError(() => validate(credentials))
         setSubmit(true)
-        if(Object.keys(formError).length === 0 && submit){
+        if (Object.keys(formError).length === 0 && submit) {
             dispatch(updateProduct(id, credentials))
             setSuccess(true)
         }
@@ -48,11 +49,11 @@ const UpdateProduct = () => {
     }
 
     useEffect(() => {
-        if(success){
+        if (success) {
             alert("Product updated successfully!")
             navigate('/admin')
         }
-    },[success])
+    }, [success])
 
     const validate = (value) => {
         const errors = {}
@@ -68,6 +69,9 @@ const UpdateProduct = () => {
         }
         if (!value.price) {
             errors.price = "*Price is required"
+        }
+        if (!value.image) {
+            errors.image = "*Image is required"
         }
 
         return errors
@@ -86,12 +90,16 @@ const UpdateProduct = () => {
                     <span className="error">{formError.model}</span>
                 </div>
                 <div>
-                    <input type="text" name="description" value={credentials.description} placeholder="product description" onChange={(e) => handleChange(e)}  />
+                    <input type="text" name="description" value={credentials.description} placeholder="product description" onChange={(e) => handleChange(e)} />
                     <span className="error">{formError.description}</span>
                 </div>
                 <div>
                     <input type="number" name="price" value={credentials.price} placeholder="price" min={0} onChange={(e) => handleChange(e)} />
                     <span className="error">{formError.price}</span>
+                </div>
+                <div>
+                    <input type="text" name="image" value={credentials.image} placeholder="image URL" onChange={(e) => handleChange(e)} />
+                    <span className="error">{formError.image}</span>
                 </div>
                 <label>Category</label>
                 <select name="category" disabled>

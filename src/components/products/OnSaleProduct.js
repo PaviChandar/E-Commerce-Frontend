@@ -35,7 +35,7 @@ const OnSaleProduct = () => {
                 return (
                     <div className={index === slideNumber ? 'slide active' : 'slide'} key={index} >
                         {index === slideNumber && (
-                            <img src={photos[slideNumber]} alt="samsung" className="image" />
+                            <img src={photos[slideNumber]} alt="image" className="image" />
                         )}
                     </div>
                 )

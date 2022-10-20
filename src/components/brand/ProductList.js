@@ -19,6 +19,7 @@ const ProductList = () => {
 
     const handleCart = (product) => {
         dispatch(addProductsToCart(product, token.id))
+        alert("Product added to cart")
     }
 
     return (

@@ -1,4 +1,3 @@
-import { faL } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +15,8 @@ const NewProduct = () => {
         model: '',
         description: '',
         price: '',
-        category: ''
+        category: '',
+        image: ''
     })
 
     const handleChange = (e) => {
@@ -56,6 +56,9 @@ const NewProduct = () => {
         if (!value.price) {
             errors.price = "*Price is required"
         }
+        if (!value.image) {
+            errors.image = "*Image is required"
+        }
 
         return errors
     }
@@ -79,6 +82,10 @@ const NewProduct = () => {
                 <div>
                     <input type="number" name="price" placeholder="price" min={0} onChange={(e) => handleChange(e)} value={credentials.price} />
                     <span className="error">{formError.price}</span>
+                </div>
+                <div>
+                    <input type="text" name="image" placeholder="image URL" onChange={(e) => handleChange(e)} value={credentials.image} />
+                    <span className="error">{formError.image}</span>
                 </div>
                 <label>Category</label>
                 <select name="category" onChange={(e) => handleChange(e)} >
