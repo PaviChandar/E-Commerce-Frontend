@@ -42,9 +42,7 @@ const ProductList = () => {
                                                         Model : {product.model}</b>
                                                 </a>
                                             </h6>
-                                            <p className="mb-3">
-                                                {product.description}
-                                            </p>
+                                            <p className="mb-3">{product.description}</p>
                                         </div>
                                         <div className="mt-3 mt-lg-0 ml-lg-3 text-center">
                                             <h3 className="mb-0 font-weight-semibold">INR {product.price}</h3>
@@ -60,6 +58,7 @@ const ProductList = () => {
                             )
                         })
                     }
+                    <button type="button" style={{ width: "100px", height: "40px", marginLeft: "400px" }} className="btn mt-4" onClick={() => navigate('/')} >Go Back</button>
                 </div>
             </div>
         </div>

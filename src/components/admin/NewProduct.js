@@ -28,18 +28,18 @@ const NewProduct = () => {
         e.preventDefault()
         setFormError(() => validate(credentials))
         setSubmit(true)
-        if(Object.keys(formError).length === 0 && submit){
+        if (Object.keys(formError).length === 0 && submit) {
             dispatch(registerProduct(credentials))
             setSuccess(true)
         }
     }
 
     useEffect(() => {
-        if(success){
+        if (success) {
             alert("Product created successfully")
             navigate('/admin')
         }
-    },[success])
+    }, [success])
 
     const validate = (value) => {
         const errors = {}
@@ -89,6 +89,7 @@ const NewProduct = () => {
                 </div>
                 <label>Category</label>
                 <select name="category" onChange={(e) => handleChange(e)} >
+                    <option>Select</option>
                     <option value="samsung">Samsung</option>
                     <option value="oneplus">OnePlus</option>
                     <option value="vivo">Vivo</option>

@@ -12,10 +12,10 @@ h1 {
 }
 
 .registerContainer {
-    background-color: rgba(144, 238, 144, 0.806);;
+    background-color: rgba(144, 238, 144, 0.806);
     color: black;
     width: 30%;
-    height: 70%;
+    height: 75%;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -51,6 +51,7 @@ input[type="number"]{
 .error {
     color: red;
     font-weight: bold;
+    background-color: rgba(144, 238, 144, 0.806);
 }
 
 .formSubmit {
