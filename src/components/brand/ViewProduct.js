@@ -30,7 +30,7 @@ const ViewProduct = () => {
 
     return (
         <div>
-        <h1>{product.category}{" "}{product.model}</h1>
+            <h1>{product.category}{" "}{product.model}</h1>
             <Navbar />
             <div className="card">
                 <div className='viewContainer'>
@@ -41,15 +41,15 @@ const ViewProduct = () => {
                     })}
                 </div>
                 <div className="viewProductContainer">
-                    <h5 className="viewTitle"><b>Name : </b>{product.name}<br />
+                    <h5 className="viewTitle">Name : {product.name}<br />
                         <b> Model :</b> {product.model}</h5>
                     <p className="viewText">{product.description} </p>
                     <h3 className="viewPrice">Rs. {product.price}</h3>
                     <input className="viewQuantity" value={quantity} min={0} type="number" onChange={(e) => setQuantity(e.target.value)} />
-                    <button href="#" className="btn" style = {{marginLeft: "30px"}} onClick={(handleCart)} >Add to cart </button>
-                    <button className="btn" style = {{marginLeft: "60px"}}  onClick={() => navigate('/product-list')}>Go Back</button>
+                    <button href="#" className='btn' style={{ marginLeft: "30px" }} onClick={(handleCart)} >Add to cart </button>
                 </div>
             </div>
+            <button className="btn mt-4" style={{ marginLeft: "900px" }} onClick={() => navigate('/product-list')}>Go Back</button>
         </div>
     )
 }

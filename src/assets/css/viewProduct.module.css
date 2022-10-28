@@ -1,9 +1,13 @@
-.cardContainer{
+.cardContainer {
     display: flex;
     flex-direction: row;
 }
 
-img{
+img {
     width: 200px;
     height: 300px;
+}
+
+h5 {
+    font-weight: bold;
 }

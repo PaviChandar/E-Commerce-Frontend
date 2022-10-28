@@ -3,7 +3,6 @@ import "../../assets/css/home.css"
 import GoToList from "../products/GoToList";
 import OnSaleProduct from "../products/OnSaleProduct";
 import LatestProduct from "../products/LatestProduct";
-import { useSelector } from "react-redux";
 import Navbar from "./Navbar";
 
 const Home = () => {

@@ -37,7 +37,10 @@ const Router = () => {
                 <Route path='/view-product/:id' element={<ViewProduct />} />
                 <Route path="/cart" element={<Cart />} />
 
-                <Route path='/admin' element={<AdminHome />} />
+                <Route path='/admin' element={<AdminHome />} >
+                    {/* <Route path='create/product' element={<NewProduct />} />
+                    <Route path='update/:id' element={<UpdateProduct />} /> */}
+                </Route>
                 <Route path='/admin/create/product' element={<NewProduct />} />
                 <Route path='/admin/update/:id' element={<UpdateProduct />} />
             </Routes>

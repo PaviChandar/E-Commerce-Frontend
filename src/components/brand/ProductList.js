@@ -46,10 +46,10 @@ const ProductList = () => {
                                         </div>
                                         <div className="mt-3 mt-lg-0 ml-lg-3 text-center">
                                             <h3 className="mb-0 font-weight-semibold">INR {product.price}</h3>
-                                            <button type="button" className="btn mt-4" onClick={() => handleCart(product)}>
+                                            <button  className="btn mt-4" onClick={() => handleCart(product)}>
                                                 <i className="icon-cart-add mr-2" /> Add to cart
                                             </button><br />
-                                            <button type="button" className="btn mt-4" onClick={() => navigate(`/view-product/${product._id}`)}>
+                                            <button  className="btn mt-4" onClick={() => navigate(`/view-product/${product._id}`)}>
                                                 <i className="icon-cart-add mr-2" /> View Product
                                             </button>
                                         </div>
@@ -58,7 +58,7 @@ const ProductList = () => {
                             )
                         })
                     }
-                    <button type="button" style={{ width: "100px", height: "40px", marginLeft: "400px" }} className="btn mt-4" onClick={() => navigate('/')} >Go Back</button>
+                    <button style={{ width: "100px", height: "40px", marginLeft: "400px" }} className="btn mt-4" onClick={() => navigate('/')} >Go Back</button>
                 </div>
             </div>
         </div>

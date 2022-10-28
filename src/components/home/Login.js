@@ -21,7 +21,6 @@ const Login = () => {
         setFormError(() => validate(credentials))
     }
 
-
     useEffect(() => {
         if (sessionStorage.getItem('token')) {
             if (sessionStorage.getItem('role') === 'true') {
@@ -30,7 +29,7 @@ const Login = () => {
                 navigate('/')
             }
         }
-    })
+    },[success])
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -38,7 +37,7 @@ const Login = () => {
         setSubmit(true)
         dispatch({ type: "LOGIN_START" })
         try {
-            if (Object.keys(formError).length === 0 && submit) {
+            if (Object.keys(formError).length === 0 && submit) {               
                 dispatch(loginUser(credentials))
                 setSuccess(true)
             }

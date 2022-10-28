@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/availableProducts.css"
 import { useDispatch } from "react-redux";
-import { deleteProduct, getAllProducts } from "../../action/action";
+import { deleteProduct } from "../../action/action";
 import { Table, Space } from "antd";
 import axios from "axios";
 import { baseUrl } from "../shared/Constant";

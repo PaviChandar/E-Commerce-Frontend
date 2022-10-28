@@ -86,6 +86,7 @@ export const loginUser = (user) => {
                 sessionStorage.setItem('token', res.data.token)
                 sessionStorage.setItem('role', res.data.isAdmin)
                 dispatch(isAdmin(res.data.isAdmin))
+                console.log("dispatch completed")
             })
             .catch(err => {
                 console.log("error : ", err)
