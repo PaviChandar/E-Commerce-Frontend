@@ -10,6 +10,7 @@ import UpdateProduct from "../components/admin/UpdateProduct";
 import ViewProduct from "../components/brand/ViewProduct";
 import ProductList from "../components/brand/ProductList";
 import Cart from "../components/cart/Cart";
+import AdminOutlet from "../components/admin/AdminOutlet";
 
 const Router = () => {
 
@@ -26,7 +27,6 @@ const Router = () => {
         }
     }, [])
 
-
     return (
         <>
             <Routes>
@@ -35,16 +35,16 @@ const Router = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/product-list' element={<ProductList />} />
                 <Route path='/view-product/:id' element={<ViewProduct />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path='/cart' element={<Cart />} />
 
-                <Route path='/admin' element={<AdminHome />} >
-                    {/* <Route path='create/product' element={<NewProduct />} />
-                    <Route path='update/:id' element={<UpdateProduct />} /> */}
+                <Route path='/admin' element={<AdminOutlet />}>
+                    <Route path='' element={<AdminHome />} />
+                    <Route path='create/product' element={<NewProduct />} />
+                    <Route path='update/:id' element={<UpdateProduct />} />
                 </Route>
-                <Route path='/admin/create/product' element={<NewProduct />} />
-                <Route path='/admin/update/:id' element={<UpdateProduct />} />
             </Routes>
         </>
+
     )
 }
 

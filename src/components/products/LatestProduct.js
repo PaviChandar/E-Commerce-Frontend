@@ -11,7 +11,7 @@ const LatestProduct = () => {
                 </a>
                 <div className="lightbox-target" id="product1">
                     <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2-VSvI4Qh1BNXkAIaDTz5Y6VnTN41B9FoWl3ZoRUTRoBjSOLr0WlY_lizDXbjWOJx55v5N5vVzzSh3_Q5IjOBhsD5biON4p8jmoJnfP6ScqpiuJ5Fw9p2sg&usqp=CAE" alt="image" />
-                    <a class="lightbox-close" href="product1"></a>
+                    <a className="lightbox-close" href="product1"></a>
                 </div>
                 <span> M12 U Itra 5G Smartphone Full Screen Android12 Telephone With 16GB+1T Face Unlock Real 4G Gaming Smartphone</span>
             </div>
@@ -33,7 +33,7 @@ const LatestProduct = () => {
                 </a>
                 <div className="lightbox-target" id="product3">
                     <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSyy6-NVAsiaIjj17PMa7I3UgVrqbOR5P9262ZNI0jAh36u16HoUcUhSabUcRgO7PDTwIdZVaKYXLUvq4xwfRFTwzh7cWAQw9XJh5r17gw&usqp=CAE" alt="image" />
-                    <a class="lightbox-close" href="product3"></a>
+                    <a className="lightbox-close" href="product3"></a>
                 </div>
                 <span>8 GB RAM | 128 GB ROM | Expandable Upto 1 TB 16.36 cm (6.44 inch). Full HD+ Display64MP + 8MP 32MP Front Camera. 4000 mAh Battery</span>
             </div>

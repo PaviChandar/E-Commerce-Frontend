@@ -56,14 +56,26 @@ input[type="number"]{
 
 .formSubmit {
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     background-color: black;
     color: white;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px; 
-    display: grid;
+    display: grid;  
     position: absolute;
-    bottom: 5%;
-    left: 48%;
+    bottom: 6%;
+    left: 51%;
+}
+
+.goToLogin{
+    border: none;
+    padding: 8px 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 44%;
+    margin-top: 85px;
 }

@@ -122,6 +122,7 @@ const Register = () => {
                 </form>
             </div >
             <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} className="formSubmit">Submit</button>
+            <button type="submit" value="Submit" onClick={() => navigate('/login')} className="goToLogin">Go to login</button>
         </div >
     )
 }

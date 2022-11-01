@@ -43,7 +43,7 @@ const UpdateProduct = () => {
         setSubmit(true)
         if (Object.keys(formError).length === 0 && submit) {
             dispatch(updateProduct(id, credentials))
-            setSuccess(true)
+             setSuccess(true)
         }
 
     }
