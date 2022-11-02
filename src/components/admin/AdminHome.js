@@ -18,7 +18,7 @@ const AdminHome = () => {
             <h1><b>Admin Home</b></h1>
             <button onClick={(e) => handleLogout(e)} className="adminLogout">Logout</button>
             <AvailableProducts />
-            <button onClick={() => navigate('/admin/create/product')} className="addProduct">Add Product</button>
+            <button onClick={() => navigate('create/product')} className="addProduct">Add Product</button>
         </div>
     )
 }

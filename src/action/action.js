@@ -82,7 +82,6 @@ export const loginUser = (user) => {
         axios
             .post(`${baseUrl}/authenticate/login`, user)
             .then((res) => {
-                console.log("response for login : ", res.data)
                 dispatch(userLoggedIn(res.data.details))
                 sessionStorage.setItem('token', res.data.token)
                 sessionStorage.setItem('role', res.data.isAdmin)

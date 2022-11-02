@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerProduct } from "../../action/action";
-import "../../assets/css/newProduct.css"
+import "../../assets/css/newProduct.module.css"
 
 const NewProduct = () => {
     const navigate = useNavigate()
