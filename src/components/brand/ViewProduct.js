@@ -49,7 +49,7 @@ const ViewProduct = () => {
                     <button href="#" className='btn' style={{ marginLeft: "30px" }} onClick={(handleCart)} >Add to cart </button>
                 </div>
             </div>
-            <button className="btn mt-4" style={{ marginLeft: "900px" }} onClick={() => navigate('/product-list')}>Go Back</button>
+            <button className="btn mt-4 ml-5" style={{ marginLeft: "900px" }} onClick={() => navigate('/product-list')}>Go Back</button>
         </div>
     )
 }

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const AvailableProducts = () => {
     const [products, setProducts] = useState([])
-    const [success, setSuccess] = useState()
+    const [success, setSuccess] = useState(false)
     const [productSource, setProductSource] = useState([])
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -40,7 +40,7 @@ const AvailableProducts = () => {
         .catch((err) => {
             console.log("error : ", err)
         })
-    }, [])
+    }, [success])
 
     useEffect(() => {
         const dataSource = products.map((e) => {
@@ -99,7 +99,7 @@ const AvailableProducts = () => {
         <div>
            <h2>Available Mobiles</h2>
            {
-            products.length ?  products.length===0 ? <h5>No Products Found</h5>:<Table columns={column} dataSource={productSource} />:<h5>Loading...</h5>
+            products.length ?  products.length===0 ? <h5>No Products Found</h5>:<Table columns={column} dataSource={productSource} />:<h3>Loading...</h3>
            }
         </div>
     )

@@ -25,7 +25,6 @@ const ProductList = () => {
 
     return (
         <div className="container d-flex justify-content-center mt-50 mb-50">
-            {/* <h1>{product.category} available mobiles</h1> */}
             <Navbar />
             <div className="row">
                 <div className="col-md-10">
