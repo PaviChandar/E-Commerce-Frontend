@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import "../../assets/css/navbar.css"
+import { getMyCart } from "../../action/action";
 
 const Navbar = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const { cart } = useSelector((state) => (state.cart))
 
     useEffect(() => {
+        dispatch(getMyCart(token.id))
         if (sessionStorage.getItem('token')) {
             setIsLoggedIn(true)
         }
-    })
+    }, [])
 
     let token
 

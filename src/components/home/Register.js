@@ -28,7 +28,6 @@ const Register = () => {
     }
 
     const handleSubmit = (e) => {
-
         e.preventDefault()
         setFormError(() => (validate(credentials)))
         setIsSubmit(true)
@@ -48,7 +47,7 @@ const Register = () => {
     const validate = (value) => {
 
         const errors = {}
-        const emailRegex = /^([a-z]+[\.-\d]*)@([a-z-]+)\.([a-z\-]{2,8})(\.[a-z]{2,8})?$/
+        const emailRegex = /^([a-z]+[.-\d]*)@([a-z-]+)\.([a-z-]{2,8})(\.[a-z]{2,8})?$/
         const passwordRegex = /^[a-zA-Z0-9]{8,20}$/
         const nameRegex = /^[a-zA-Z ]+$/
         const contactRegex = /^[6-9]{1}[0-9]{9}$/
@@ -95,7 +94,7 @@ const Register = () => {
                     <div className="registerItems">
                         <div className="registerItem">
                             <label> Username:</label>
-                            <input type="text" name="username" value={credentials.username} onChange={(e) => handleChange(e)}  />
+                            <input type="text" name="username" value={credentials.username} onChange={(e) => handleChange(e)} />
                             <span className="error">{formError.username}</span>
                         </div>
                         <div className="registerItem">
@@ -105,7 +104,7 @@ const Register = () => {
                         </div>
                         <div className="registerItem">
                             <label>Password:</label>
-                            <input type="password" name="password" value={credentials.password} onChange={(e) => handleChange(e)}  />
+                            <input type="password" name="password" value={credentials.password} onChange={(e) => handleChange(e)} />
                             <span className="error">{formError.password}</span>
                         </div>
                         <div className="registerItem">
@@ -115,7 +114,7 @@ const Register = () => {
                         </div>
                         <div className="registerItem">
                             <label>Contact:</label>
-                            <input type="number" name="phone" value={credentials.phone} onChange={(e) => handleChange(e)}  min={0} />
+                            <input type="number" name="phone" value={credentials.phone} onChange={(e) => handleChange(e)} min={0} />
                             <span className="error">{formError.phone}</span>
                         </div>
                     </div>

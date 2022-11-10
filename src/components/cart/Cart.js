@@ -28,7 +28,6 @@ const Cart = () => {
 
         item.forEach(element => {
             totalQuantity += element.quantity 
-            console.log("total quantity : ", totalQuantity)
         });
 
         return totalPrice

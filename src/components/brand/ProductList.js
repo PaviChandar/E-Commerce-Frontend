@@ -18,7 +18,6 @@ const ProductList = () => {
     }
 
     const handleCart = (product) => {
-        console.log("Product : ", product.category)
         dispatch(addProductsToCart(product, token.id))
         alert("Product added to cart")
     }
