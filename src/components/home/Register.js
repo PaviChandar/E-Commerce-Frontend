@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../action/action";
+import { registerNewUser } from "./UserSlice";
 
 
 const Register = () => {
@@ -33,6 +34,7 @@ const Register = () => {
         setIsSubmit(true)
         if (Object.keys(formError).length === 0 && isSubmit) {
             dispatch(registerUser(credentials))
+            // dispatch(registerNewUser(credentials))
             setSuccess(true)
         }
     }

@@ -16,7 +16,7 @@ const Navbar = () => {
         if (sessionStorage.getItem('token')) {
             setIsLoggedIn(true)
         }
-    }, [])
+    }, [cart])
 
     let token
 

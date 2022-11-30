@@ -11,6 +11,9 @@ import ViewProduct from "../components/brand/ViewProduct";
 import ProductList from "../components/brand/ProductList";
 import Cart from "../components/cart/Cart";
 import AdminOutlet from "../components/admin/AdminOutlet";
+import { useSelector } from "react-redux";
+import ProtectedRoutes from "./ProtectedRoutes";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Router = () => {
 
@@ -19,28 +22,65 @@ const Router = () => {
     let url = window.location.href
     const navigate = useNavigate()
 
-    useEffect(() => {
-        if (sessionStorage.getItem('role') === 'true' && url.indexOf('/')) {
-            navigate('/admin')
-        } else if (sessionStorage.getItem('role') === 'false' && url.indexOf('/admin')) {
-            navigate('/')
-        }
-    }, [])
+    const {isAdmin} = useSelector(state => state.user)
+    console.log("Admin : ", isAdmin);
+
+    // useEffect(() => {
+    //     if (sessionStorage.getItem('role') === 'true' && url.indexOf('/')) {
+    //         navigate('/admin')
+    //     } else if (sessionStorage.getItem('role') === 'false' && url.indexOf('/admin')) {
+    //         navigate('/')
+    //     }
+    // }, [])
 
     return (
         <>
             <Routes>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
-                <Route path='/' element={<Home />} />
-                <Route path='/product-list' element={<ProductList />} />
-                <Route path='/view-product/:id' element={<ViewProduct />} />
-                <Route path='/cart' element={<Cart />} />
 
-                <Route path='/admin' element={<AdminOutlet />}>
-                    <Route path='' element={<AdminHome />} />
-                    <Route path='create/product' element={<NewProduct />} />
-                    <Route path='update/:id' element={<UpdateProduct />} />
+
+                <Route path='/' element={
+                    <ProtectedRoutes>
+                        <Home />
+                    </ProtectedRoutes>
+                } />
+                <Route path='/product-list' element={
+                    <ProtectedRoutes>
+                        <ProductList />
+                    </ProtectedRoutes>
+                } />
+                <Route path='/view-product/:id' element={
+                    <ProtectedRoutes>
+                        <ViewProduct />
+                    </ProtectedRoutes>
+                } />
+                <Route path='/cart' element={
+                    <ProtectedRoutes>
+                        <Cart />
+                    </ProtectedRoutes>
+                } />
+
+
+                <Route path='/admin' element={
+                    <PrivateRoutes>
+                        <AdminOutlet />
+                    </PrivateRoutes>
+                }>
+                    <Route path='' element={
+                        <PrivateRoutes>
+                            <AdminHome />
+                        </PrivateRoutes>} />
+                    <Route path='create/product' element={
+                        <PrivateRoutes>
+                            <NewProduct />
+                        </PrivateRoutes>
+                    } />
+                    <Route path='update/:id' element={
+                        <PrivateRoutes>
+                            <UpdateProduct />
+                        </PrivateRoutes>
+                    } />
                 </Route>
             </Routes>
         </>

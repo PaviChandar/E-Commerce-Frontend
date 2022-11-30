@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../action/action";
 import "../../assets/css/login.css"
+import { loginPerson } from "./UserSlice";
 
 const Login = () => {
     const [formError, setFormError] = useState(false)
@@ -17,7 +18,7 @@ const Login = () => {
     const dispatch = useDispatch()
 
     const { user } = useSelector(state => state.user)
-
+    console.log("User : ", user);
 
     const handleChange = (e) => {
         setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }))
@@ -27,31 +28,33 @@ const Login = () => {
     useEffect(() => {
         if (sessionStorage.getItem('token')) {
             if (sessionStorage.getItem('role') === 'true') {
-                alert("Successfully logged in!")
+                alert("Successfully admin logged in!")
                 navigate('/admin')
             } else {
                 alert("Successfully logged in!")
                 navigate('/')
             }
         }
-    },[success,user])
+    }, [success, user])
 
     const handleLogin = (e) => {
         setFormError(() => validate(credentials))
         setSubmit(true)
         dispatch({ type: "LOGIN_USER" })
+        // dispatch(loginPerson())
     }
 
-    useEffect(()=>{
-         try {
-            if (Object.keys(formError).length === 0 && submit) {               
+    useEffect(() => {
+        try {
+            if (Object.keys(formError).length === 0 && submit) {
                 dispatch(loginUser(credentials))
+                // dispatch(loginPerson(credentials))
                 setSuccess(true)
             }
         } catch (err) {
             console.log("error : ", err)
         }
-    },[submit])
+    }, [submit])
 
     const validate = (value) => {
         const errors = {}
@@ -76,7 +79,7 @@ const Login = () => {
                     <input type="password" placeholder="password" className="password" id="password" onChange={handleChange} />
                     <span className="loginError">{formError.password}</span>
                 </div>
-                <button className="loginButton" onClick={(event)=>{handleLogin(event)}}>Login</button>
+                <button className="loginButton" onClick={(event) => { handleLogin(event) }}>Login</button>
                 <h3>Not an user? Click register, to login</h3>
                 <button className="loginButton" onClick={() => navigate('/register')} >Register</button>
             </div>

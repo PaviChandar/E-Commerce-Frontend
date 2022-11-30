@@ -46,7 +46,7 @@ const ViewProduct = () => {
                     <p className="viewText">{product.description} </p>
                     <h3 className="viewPrice">Rs. {product.price}</h3>
                     <input className="viewQuantity" value={quantity} min={0} type="number" onChange={(e) => setQuantity(e.target.value)} />
-                    <button href="#" className='btn' style={{ marginLeft: "30px" }} onClick={(handleCart)} >Add to cart </button>
+                    <button href="#" className='btn' style={{ marginLeft: "30px" }} onClick={(handleCart)}>Add to cart </button>
                 </div>
             </div>
             <button className="btn mt-4 ml-5" style={{ marginLeft: "900px" }} onClick={() => navigate('/product-list')}>Go Back</button>
